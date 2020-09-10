@@ -1,11 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  body {
-    margin: 0 auto;
+  html{
+    height: 100vh;
   }
 
-  html {
-    font-size: 14px;
+  body {
+    height: 100vh;
+    margin: 0;
   }
 `;
