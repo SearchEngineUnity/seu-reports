@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.section`
-  height: 100%;
+const Wrapper = styled.main`
+  height: 100vh;
   width: 100%;
+  display: block;
 `;
 
-function Embed(props) {
+function Embed({ logo, url }) {
+  console.log(logo);
+  console.log(url);
   return (
-    <>
-      <h1>Company Logo could go here</h1>
-      <Wrapper>
-        <embed src={props} />
-      </Wrapper>
-    </>
+    <Wrapper>
+      <embed src={url} type="text/html" height="100%" width="100%" />
+    </Wrapper>
   );
 }
 export default Embed;

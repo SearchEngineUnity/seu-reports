@@ -13,9 +13,18 @@ export default {
       to: [{ type: 'organization' }],
     },
     {
-      name: 'title',
-      title: 'Title',
+      name: 'type',
+      title: 'Type',
       type: 'string',
+      options: {
+        list: [
+          { title: 'Dashboard', value: 'dashboard' },
+          { title: 'SEO', value: 'seo' },
+          { title: 'Conversion', value: 'conversion' },
+          { title: 'Ads', value: 'Ads' },
+          { title: 'Traffic', value: 'traffic' },
+        ],
+      },
     },
     {
       name: 'url',
@@ -25,8 +34,9 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
-      subttitle: 'url',
+      title: 'type',
+      subtitle: 'organization.name',
+      media: 'organization.logo',
     },
   },
 };

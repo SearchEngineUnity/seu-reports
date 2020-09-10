@@ -12,9 +12,9 @@ export default {
       type: 'string',
     },
     {
-      name: 'url',
-      title: 'Website',
-      type: 'url',
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
     },
     {
       name: 'logo',
@@ -25,8 +25,15 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'url',
+      slug: 'slug.current',
       media: 'logo',
+    },
+    prepare({ title, slug, media }) {
+      return {
+        title,
+        subtitle: `/${slug}`,
+        media,
+      };
     },
   },
 };

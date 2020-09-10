@@ -1,33 +1,37 @@
 const path = require('path');
 
 // create all structured pages except for /guides
-async function creteStructuredPages(actions, graphql) {
+async function createReports(actions, graphql) {
   const { data } = await graphql(`
     {
-      allSanityPage(filter: { slug: { current: { ne: "guide" } } }) {
+      allSanityReport {
         edges {
           node {
-            slug {
-              current
+            _id
+            organization {
+              slug {
+                current
+              }
             }
+            type
           }
         }
       }
     }
   `);
 
-  const pages = data.allSanityPage.edges;
-  pages.forEach((page) => {
+  const reports = data.allSanityReport.edges;
+  reports.forEach((report) => {
     actions.createPage({
-      path: page.node.slug.current === '/' ? '/' : `/${page.node.slug.current}`,
-      component: path.resolve(`./src/templates/structuredPage.js`),
+      path: `/${report.node.organization.slug.current}`,
+      component: path.resolve(`./src/templates/report.js`),
       context: {
-        slug: page.node.slug.current,
+        reportId: report.node._id,
       },
     });
   });
 }
 
 exports.createPages = async ({ actions, graphql }) => {
-  await creteStructuredPages(actions, graphql);
+  await createReports(actions, graphql);
 };
