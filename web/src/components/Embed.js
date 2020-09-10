@@ -7,9 +7,7 @@ const Wrapper = styled.main`
   display: block;
 `;
 
-function Embed({ logo, url }) {
-  console.log(logo);
-  console.log(url);
+function Embed({ url }) {
   return (
     <Wrapper>
       <embed src={url} type="text/html" height="100%" width="100%" />

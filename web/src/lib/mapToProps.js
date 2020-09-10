@@ -1,10 +1,6 @@
 // eslint-disable-next-line
-export function mapEmbedToProps({ idTag, title, _rawText, backgroundImage, backgroundColor }) {
+export function mapEmbedToProps({ url }) {
   return {
-    id: idTag,
-    title,
-    heroText: _rawText,
-    imageURL: backgroundImage?.asset?.url,
-    backgroundColor: backgroundColor?.hex,
+    url,
   };
 }
