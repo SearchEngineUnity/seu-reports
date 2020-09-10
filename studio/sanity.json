@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "SEU"
-  },
   "api": {
-    "projectId": "oo9q1e97",
+    "projectId": "rlx5jnth",
     "dataset": "production"
+  },
+  "project": {
+    "name": "SEU Reports"
   },
   "plugins": [
     "@sanity/base",
