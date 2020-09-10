@@ -6,47 +6,8 @@ import { FiNavigation2 } from 'react-icons/fi';
 
 export default () =>
   S.list()
-    .title('SEU')
+    .title('SEU Reports')
     .items([
-      S.listItem()
-        .title('Site Settings')
-        .icon(MdSettings)
-        .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
-      S.listItem()
-        .title('Company Info')
-        .icon(BsInfoSquare)
-        .child(
-          S.list()
-            .title('Company Info')
-            .items([
-              S.listItem()
-                .title('Contact Info')
-                .icon(MdBusiness)
-                .child(S.document().schemaType('companyInfo').documentId('companyInfo')),
-              S.documentTypeListItem('socialInfo').title('Social Info'),
-              S.documentTypeListItem('companyLogo').title('Company Logos'),
-            ]),
-        ),
-      S.listItem()
-        .title('Website')
-        .icon(AiOutlineGlobal)
-        .child(
-          S.list()
-            .title('Website')
-            .items([
-              S.listItem()
-                .title('Main Navigation')
-                .icon(FiNavigation2)
-                .child(
-                  S.document().schemaType('mainNavbar').documentId('mainNavbar').title('Main Nav'),
-                ),
-              S.documentTypeListItem('page').title('Structured Pages'),
-              S.divider(),
-              S.documentTypeListItem('guide').title('Guides'),
-              S.documentTypeListItem('mpGuide').title('MP Guides'),
-              S.documentTypeListItem('category').title('Guide Categories'),
-            ]),
-        ),
-      S.documentTypeListItem('redirect').title('Redirects'),
-      S.documentTypeListItem('person').title('People'),
+      S.documentTypeListItem('organization').title('Organizations'),
+      S.documentTypeListItem('report').title('Reports'),
     ]);
