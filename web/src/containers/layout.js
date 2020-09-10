@@ -13,10 +13,7 @@ import GlobalStyle from '../global/GlobalStyle';
 const Layout = ({ children }) => {
   return (
     <>
-      <Helmet>
-        <script src="https://kit.fontawesome.com/e4a269ffa7.js" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://use.typekit.net/mwy2rpa.css" />
-      </Helmet>
+      <Helmet />
       <GlobalStyle />
       <>{children}</>
     </>
