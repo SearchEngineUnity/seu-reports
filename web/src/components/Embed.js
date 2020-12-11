@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+// updated Sanity
 
 const Wrapper = styled.main`
   height: 100vh;
