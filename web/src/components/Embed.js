@@ -2,19 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 // updated Sanity
 
-const Wrapper = styled.section`
-  height: 100%;
+const Wrapper = styled.main`
+  height: 100vh;
   width: 100%;
+  display: block;
 `;
 
-function Embed(props) {
+function Embed({ url }) {
   return (
-    <>
-      <h1>Company Logo could go here</h1>
-      <Wrapper>
-        <embed src={props} height="100%" width="100%" />
-      </Wrapper>
-    </>
+    <Wrapper>
+      <embed src={url} type="text/html" height="100%" width="100%" />
+    </Wrapper>
   );
 }
 export default Embed;

@@ -6,7 +6,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://techquanimous.com/', // update to new netlify URL
+  URL: NETLIFY_SITE_URL = 'https://reports.searchengineunity.com', // update to new netlify URL
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env;
@@ -23,7 +23,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'oo9q1e97',
+        projectId: 'rlx5jnth',
         dataset: 'production',
         // To enable preview of drafts, copy .env-example into .env,
         // and add a token with read permissions
@@ -44,15 +44,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `search-engine-unity`,
-        short_name: `seu`,
+        name: `SEU Reports`,
+        short_name: `SEU Reports`,
         start_url: `/`,
         lang: `en`,
         display: `standalone`,
         icon: `src/images/SEU-favicon-transparent.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`,
+    'gatsby-plugin-remove-serviceworker',
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
