@@ -15,7 +15,9 @@
     "@sanity/desk-tool",
     "@sanity/color-input",
     "table",
-    "media"
+    "media",
+    "@sanity/dashboard",
+    "dashboard-widget-netlify"
   ],
   "env": {
     "development": {
@@ -40,6 +42,10 @@
     {
       "implements": "part:@sanity/form-builder/input/image/asset-sources",
       "path": "./assetSources.js"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "src/dashboardConfig.js"
     }
   ]
 }
